@@ -5,17 +5,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Misión TIC 2022 || Grupo 53405 || Subgrupo 1</title>
+    <link rel="stylesheet" href="./CSS/estilos.css">
+    <title>Sprint 1 || Ciclo 3 || Misión TIC 2022</title>
 </head>
 
 <body>
+
     <header>
+
+        <div class="header">
+            <h1>La Fritanguita</h1>
+            <img src="./IMG/LogoLaFritanguitaDefinitivo.png" class="header__logo" alt="Logotipo de La Fritanguita - Color naranja con letras blancas">
+        </div>
 
     </header>
 
+    <main>
+    <form action="" id="form-registro">
+
+        <div class="formulario__registro">
+
+            <div>
+                <h2>Registro</h2>
+            </div>
+
+            <div class="formulario__registro__contenidos">
+                <label for="tipoDocumentoUsuario">Tipo de documento</label>
+                <select name="tipoDocumentoUsuario" class="dimensiones__inputs" id="tipoDocumentoUsuario">
+                    <option value="cedulaCiudadania">Cédula de Ciudadania</option>
+                    <option value="tarjetaIdentidad">Tarjeta de Identidad</option>
+                    <option value="cedulaExtranjeria">Cédula de Extranjería</option>
+                    <option value="pasaporte">Pasaporte</option>
+                    <option value="tarjetaResidencia">Tarjeta de Residencia</option>
+                    <option value="permisoEspecialPermanencia">Permiso Especial de Permanencia</option>
+                </select>
+            </div>
+
+            <div class="formulario__registro__contenidos">
+                <label for="numeroDocumentoUsuario">Numero de documento</label>
+                <input type="number" name="numeroDocumentoUsuario" class="dimensiones__inputs" id="numeroDocumentoUsuario" placeholder="Digite su número de documento aquí..." minlength="8" maxlength="10" required>
+            </div>  
+
+            <div class="formulario__registro__contenidos">
+                <label for="correElectronicoUsuario">Correo</label>
+                <input type="email" name="correElectronicoUsuario" class="dimensiones__inputs" id="correElectronicoUsuario" placeholder="Escriba su correo electrónico aquí..." required>
+            </div>
+
+            <div class="formulario__registro__contenidos">
+                <label for="contrasenaUsuario">Contraseña</label>
+                <input type="password" name="contrasenaUsuario" class="dimensiones__inputs" id="contrasenaUsuario" placeholder="Digite su contraseña aquí..." required>
+            </div>
+
+            <button type="submit" class="boton__registrar" id="btn-registrar">Registrar</button>
+
+        </div>
+    </form>
+    </main>
+
+    <hr>
+
     <footer>
-
+        <div class="footer">
+            <h3>Todos los derechos reservados La Fritanguita 2021</h3>
+        </div>
     </footer>
-</body>
 
+    <!-- LLAMAMOS AL ARCHIVO JAVASCRIPT form.js -->
+    <script src="./JS/form.js"></script>
+
+
+</body>
 </html>

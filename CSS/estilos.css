@@ -1,0 +1,94 @@
+/* FUENTE O TIPOGRAFÍA MONTSERRAT */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Quicksand:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 400px;
+  color: #fa3d22;
+}
+
+.header h1 {
+  background-color: #fa3d22;
+  color: white;
+  width: 500px;
+  border: 5px #fa3d22 solid;
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.header__logo {
+  border-radius: 10px;
+  width: 250px;
+  height: 250px;
+}
+
+.formulario__registro {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 600px;
+}
+
+.formulario__registro__contenidos {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-content: center;
+  height: 80px;
+}
+
+.formulario__registro h2 {
+  background-color: #fa3d22;
+  color: white;
+  width: 450px;
+  border: 10px #fa3d22 solid;
+  border-radius: 10px;
+}
+
+.dimensiones__inputs {
+  height: 30px;
+  width: 450px;
+  border: 2px black solid;
+  text-align: center;
+  font-size: medium;
+}
+
+.boton__registrar {
+  background-color: #fa3d22;
+  color: white;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+  border-bottom: 5px black solid;
+  border-right: 4px black solid;
+  border-left: 2px black solid;
+  border-top: 2px black solid;
+  font-weight: bold;
+  font-size: large;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  height: 80px;
+  background-color: #fa3d22;
+  color: white;
+  text-align: center;
+}
