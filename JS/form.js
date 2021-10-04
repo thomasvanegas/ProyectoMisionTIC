@@ -1,6 +1,9 @@
 // EXPRESIONES REGULARES PARA LA VALIDACIÓN DE LOS DATOS DEL USUARIO
 
-const expresionRegularTipoDocumentoUsuario = /^[a-zA-Z ]{9,}/;
+// const expresionRegularTipoDocumentoUsuario = /^[a-zA-Z ]{9,}/;
+// TO DO -> const expresionRegularPasaporte;
+
+const expresionRegularPermisoPermanencia = /^[0-9]{15,}$/; 
 const expresionRegularNumeroDocumento = /^[0-9]{8,10}$/;
 const expresionRegularCorreoElectronico = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const expresionRegularContrasena = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
@@ -22,11 +25,11 @@ function checkNumDocumento(valor, tipo) {
 
             if ((expresionRegularNumeroDocumento.test(valor)) === true) {
 
-                return "verdadero";
+                return true;
 
             } else {
 
-                return "falso";
+                return false;
 
             }
 
@@ -34,11 +37,11 @@ function checkNumDocumento(valor, tipo) {
 
             if ((expresionRegularNumeroDocumento.test(valor)) === true) {
 
-                return "verdadero";
+                return true;
 
             } else {
 
-                return "falso";
+                return false;
 
             }
 
@@ -46,15 +49,30 @@ function checkNumDocumento(valor, tipo) {
 
             if ((expresionRegularNumeroDocumento.test(valor)) === true) {
 
-                return "verdadero";
+                return true;
 
             } else {
 
-                return "falso";
+                return false;
+
+            }
+
+        case "PermisoEspecialPermanencia":
+
+            if ((expresionRegularPermisoPermanencia.test(valor)) === true) {
+
+                return true;
+
+            } else {
+
+                return false;
 
             }
 
         default:
+
+            alert("El tipo de documento seleccionado no es válido");
+
             break;
 
     }
@@ -65,11 +83,11 @@ function checkCorreo(valor) {
 
     if ((expresionRegularCorreoElectronico.test(valor)) === true) {
 
-        return "verdadero";
+        return true;
 
     } else {
 
-        return "falso";
+        return false;
 
     }
 
@@ -79,11 +97,11 @@ function checkContrasena(valor) {
 
     if ((expresionRegularContrasena.test(valor)) === true) {
 
-        return "verdadero";
+        return true;
 
     } else {
 
-        return "falso";
+        return false;
 
     }
 
@@ -91,16 +109,25 @@ function checkContrasena(valor) {
 
 
 
-// CAPTURA DE DATOS DEL USUARIO
+// EJECUCIÓN DEL CÓDIGO -> CAPTURA DE DATOS DEL USUARIO
 
-boton = document.getElementById("btn-registrar");
+window.onload = inicio;
 
-boton.addEventListener("click", capturaDatosUsuario);
-
-function capturaDatosUsuario() {
+function inicio() {
 
     elementosInput = document.querySelectorAll("#form-registro input");
+
     contenidoSelect = document.getElementsByTagName("select");
+
+    boton = document.getElementById("btn-registrar");
+
+    boton.addEventListener("click", capturaDatosUsuario);
+
+}
+
+
+
+function capturaDatosUsuario() {
 
     tipoDocumento = contenidoSelect[0].value;
     numeroDocumento = parseInt(elementosInput[0].value);
@@ -122,9 +149,21 @@ function capturaDatosUsuario() {
 
     */
 
+    /*
+
     console.log(checkNumDocumento(numeroDocumento, tipoDocumento));
     console.log(checkCorreo(correoElectronico));
     console.log(checkContrasena(contrasena));
+
+    */
+
+    /*
+
+    checkNumDocumento(numeroDocumento, tipoDocumento);
+    checkCorreo(correoElectronico);
+    checkContrasena(contrasena);
+
+    */
 
 }
 
