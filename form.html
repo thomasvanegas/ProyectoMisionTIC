@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body input{
+            display: block;
+        }
+    </style>
+    <title>Formulario HTML y JS</title>
+</head>
+
+<body>
+
+    <form action="" id="form-registro" >
+
+        <label for="tipodocumento">Tipo de Documento</label>
+        <select name="tipodocumento" id="tipo-documento">
+            <option value="cedulaciudadania">Cédula de Ciudadanía</option>
+            <option value="tarjetaidentidad">Tarjeta de Identidad</option>
+            <option value="cedulaextranjeria">Cédula de Extranjería</option>
+            <option value="pasaporte">Pasaporte</option>
+            <option value="permisopermanencia">Permiso Especial de Permanencia</option>
+        </select>
+
+        <label for="numero-documento">Numero de Documento</label>
+        <input type="number" name="numero-documento" id="numero-documento" placeholder="Digite su número de documento aquí..." minlength="8" required>
+
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" name="correo" id="correo" placeholder="Escriba su correo electrónico aquí..." required>
+
+        <label for="contrasena">Contraseña</label>
+        <input type="password" name="contrasena" id="contrasena" placeholder="Digite su contraseña aquí..." required>
+
+        <button type="button" id="btn-registrar">Registrar</button>
+
+    </form>
+
+    <script src="./form.js"></script>
+
+</body>
+</html>

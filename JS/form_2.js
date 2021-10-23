@@ -1,23 +1,22 @@
-// EXPRESIONES REGULARES PARA LA VALIDACIÓN DE LOS DATOS DEL USUARIO
+// VARIABLES 
+let boton, elementosInput, contenidoSelect, tipoDocumento, numeroDocumento, correoElectronico, contrasena;
 
-// const expresionRegularTipoDocumentoUsuario = /^[a-zA-Z ]{9,}/;
-// TO DO -> const expresionRegularPasaporte;
-
+// EXPRESIONES REGULARES
 const expresionRegularPermisoPermanencia = /^[0-9]{15,}$/; 
 const expresionRegularNumeroDocumento = /^[0-9]{8,10}$/;
 const expresionRegularCorreoElectronico = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const expresionRegularContrasena = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-
-
-// DECLARACIÓN DE VARIABLES
-
-let boton, elementosInput, contenidoSelect, tipoDocumento, numeroDocumento, correoElectronico, contrasena;
-
-
 // FUNCIONES
+export function checkNumDocumento(valor, tipo) {
 
-function checkNumDocumento(valor, tipo) {
+    contenidoSelect = document.getElementsByTagName("select");
+
+    tipo = contenidoSelect[0].value;
+
+    elementosInput = document.querySelectorAll("#form-registro input");
+
+    valor = parseInt(elementosInput[0].value);
 
     switch (tipo) {
 
@@ -79,7 +78,11 @@ function checkNumDocumento(valor, tipo) {
 
 }
 
-function checkCorreo(valor) {
+export function checkCorreo(valor) {
+
+    elementosInput = document.querySelectorAll("#form-registro input");
+
+    valor = elementosInput[1].value;
 
     if ((expresionRegularCorreoElectronico.test(valor)) === true) {
 
@@ -93,7 +96,11 @@ function checkCorreo(valor) {
 
 }
 
-function checkContrasena(valor) {
+export function checkContrasena(valor) {
+
+    elementosInput = document.querySelectorAll("#form-registro input");
+
+    valor = elementosInput[2].value;
 
     if ((expresionRegularContrasena.test(valor)) === true) {
 
@@ -107,70 +114,7 @@ function checkContrasena(valor) {
 
 }
 
-
-
-// EJECUCIÓN DEL CÓDIGO -> CAPTURA DE DATOS DEL USUARIO
-
-window.onload = inicio;
-
-function inicio() {
-
-    elementosInput = document.querySelectorAll("#form-registro input");
-
-    contenidoSelect = document.getElementsByTagName("select");
-
-    boton = document.getElementById("btn-registrar");
-
-    boton.addEventListener("click", capturaDatosUsuario);
-
-}
-
-
-
-function capturaDatosUsuario() {
-
-    tipoDocumento = contenidoSelect[0].value;
-    numeroDocumento = parseInt(elementosInput[0].value);
-    correoElectronico = elementosInput[1].value;
-    contrasena = elementosInput[2].value;
-
-    // VALIDACIÓN DE DATOS
-
-    /* 
-
-    typeTipoDocumento = typeof(tipoDocumento);
-    typeNumeroDocumento = typeof(numeroDocumento);
-    typeCorreoElectronico = typeof(correoElectronico);
-    typeContrasena = typeof(contrasena);
-    console.log(typeTipoDocumento);
-    console.log(typeNumeroDocumento);
-    console.log(typeCorreoElectronico);
-    console.log(typeContrasena);
-
-    */
-
-    /*
-
-    console.log(checkNumDocumento(numeroDocumento, tipoDocumento));
-    console.log(checkCorreo(correoElectronico));
-    console.log(checkContrasena(contrasena));
-
-    */
-
-    /*
-
-    checkNumDocumento(numeroDocumento, tipoDocumento);
-    checkCorreo(correoElectronico);
-    checkContrasena(contrasena);
-
-    */
-
-}
-
-
-
 // EXPORTACIÓN DE MÓDULOS
-
 module.exports = checkNumDocumento;
 module.exports = checkCorreo;
 module.exports = checkContrasena;

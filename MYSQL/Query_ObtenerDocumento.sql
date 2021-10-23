@@ -1,0 +1,1 @@
+SELECT * FROM Usuarios WHERE Tipo_documento = 'P';

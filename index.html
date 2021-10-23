@@ -5,75 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/estilos.css">
-    <title>Sprint 1 || Ciclo 3 || Misión TIC 2022</title>
+    <title>Document</title>
 </head>
 
 <body>
 
-    <header>
+    <h1></h1>
 
-        <div class="header">
-            <h1>La Fritanguita</h1>
-            <img src="./IMG/LogoLaFritanguitaDefinitivo.png" class="header__logo" alt="Logotipo de La Fritanguita - Color naranja con letras blancas">
-        </div>
+    <form id="form-registro">
 
-    </header>
+        <label for="tipo-documento">Tipo de documento</label>
+        <select id="tipo-documento">
+            <option value="cedula" id="cedula">Cedula</option>
+            <option value="tarjeta-identidad" id="tarjeta-identidad">Tarjeta de identidad</option>
+            <option value="cedula-extranjeria">Cédula de Extranjería</option>
+            <option value="pasaporte" id="pasaporte">Pasaporte</option>
+            <!--<option value="PermisoEspecialPermanencia">Permiso Especial de Permanencia</option>-->
+        </select>
 
-    <main>
-    <form action="" id="form-registro">
+        <label for="numero-documento">Numero de documento</label>
+        <input type="number" name="numero-documento" id="numero-documento" placeholder="número de documento" required>
 
-        <div class="formulario__registro">
+        <label for="correo">Correo</label>
+        <input type="email" name="correo" id="correo" placeholder="correo" required>
 
-            <div>
-                <h2>Registro</h2>
-            </div>
+        <label for="">Contraseña</label>
+        <input type="password" name="contrasena" id="contrasena" placeholder="contraseña" required>
 
-            <div class="formulario__registro__contenidos">
-                <label for="tipoDocumentoUsuario">Tipo de documento</label>
-                <select name="tipoDocumentoUsuario" class="dimensiones__inputs" id="tipoDocumentoUsuario">
-                    <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
-                    <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                    <option value="Cédula de Extranjeria">Cédula de Extranjería</option>
-                    <option value="PermisoEspecialPermanencia">Permiso Especial de Permanencia</option>
-                    <!--<option value="Pasaporte">Pasaporte</option>-->
-                </select>
-            </div>
+        <button id="btn-registrar">Registrar</button>
 
-            <div class="formulario__registro__contenidos">
-                <label for="numeroDocumentoUsuario">Numero de documento</label>
-                <input type="number" name="numeroDocumentoUsuario" class="dimensiones__inputs" id="numeroDocumentoUsuario" placeholder="Digite su número de documento aquí..." minlength="8" maxlength="10" required>
-            </div>  
-
-            <div class="formulario__registro__contenidos">
-                <label for="correElectronicoUsuario">Correo</label>
-                <input type="email" name="correElectronicoUsuario" class="dimensiones__inputs" id="correElectronicoUsuario" placeholder="Escriba su correo electrónico aquí..." required>
-            </div>
-
-            <div class="formulario__registro__contenidos">
-                <label for="contrasenaUsuario">Contraseña</label>
-                <input type="password" name="contrasenaUsuario" class="dimensiones__inputs" id="contrasenaUsuario" placeholder="Digite su contraseña aquí..." required>
-            </div>
-
-            <button type="button"  class="boton__registrar" id="btn-registrar">Registrar</button>
-            <!--type="submit"-->
-
-        </div>
     </form>
-    </main>
 
-    <hr>
-
-    <footer>
-        <div class="footer">
-            <h3>Todos los derechos reservados La Fritanguita 2021</h3>
-        </div>
-    </footer>
-
-    <!-- LLAMAMOS AL ARCHIVO JAVASCRIPT form.js -->
-    <script src="./JS/form.js"></script>
-    <!--<script src="./JS/captura_datos_sprint2.js"></script>-->
-
+    <script src="./form.html"></script>
 
 </body>
 </html>
